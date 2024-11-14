@@ -1,0 +1,66 @@
+@import "main.css";
+
+body {
+   background-color: var(--azul-app);
+}
+
+
+.text_display {
+   letter-spacing: 3px;
+
+}
+
+.Header_logo {
+   width: 190px;
+   height: 40px;
+
+}
+
+.logo_login {
+  width: 400px;
+   height: 400px;
+   padding: 0;
+   margin: 0;
+
+}
+
+img {
+   margin: 0;
+   padding: 0;
+}
+
+.btn_cadastro {
+   color: var(--yellow-app);
+   max-width: 60px;
+   outline: 1px solid var(--yellow-app);
+
+}
+
+.btn_entrar {
+   color: var(--azul-app);
+   max-width: 60px;
+   background-color: var(--white);
+
+
+}
+
+.font_size {
+   font-size: 17px;
+   color: var(--white);
+    letter-spacing:1px;
+}
+
+.text_ {
+  color: var(--yellow-app);
+   font-size: 2rem;
+   letter-spacing: 4px;
+}
+
+.logo {
+  width: 50px;
+   height: 70px;
+}
+
+.contorno_text {
+    outline: 2px solid var(--white);
+}

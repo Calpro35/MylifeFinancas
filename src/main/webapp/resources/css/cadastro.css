@@ -1,0 +1,43 @@
+@import "main.css";
+
+.text_color {
+color: var(--azul-app);
+}
+
+
+input{
+    outline: 1px solid var(--azul-app);
+    width: 250px;
+}
+
+.btn_cadastro {
+    padding: 2rem;
+    outline: 1px solid var(--azul-app) ;
+    color: var(--white );
+    letter-spacing: 2px;
+
+
+}
+input::placeholder {
+    letter-spacing: 2px;
+}
+
+
+
+.password-container {
+    position: relative;
+
+}
+.password-container input {
+
+    padding-right: 40px; /* Espaço para o ícone */
+}
+.password-container i {
+    position: absolute;
+    right: 10px;
+    top: 72%;
+    transform: translateY(-60%);
+    cursor: pointer;
+    color: #6c757d;
+}
+

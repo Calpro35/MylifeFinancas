@@ -1,0 +1,39 @@
+@import "main.css";
+
+.text_{
+    color:var(--azul-app);
+}
+
+
+input{
+    outline: 1px solid var(--azul-app);
+    width: 250px;
+}
+
+.btn_login {
+    padding: 2rem;
+    outline: 2px solid var(--azul-app) ;
+    color: var(--white);
+    letter-spacing: 2px;
+
+}
+
+
+
+.password-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+.password-container input {
+    width: 100%;
+    padding-right: 40px; /* Espaço para o ícone */
+}
+.password-container i {
+    position: absolute;
+    right: 10px;
+    top: 67%;
+    transform: translateY(-60%);
+    cursor: pointer;
+    color: #6c757d;
+}

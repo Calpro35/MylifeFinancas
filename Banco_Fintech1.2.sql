@@ -1,0 +1,126 @@
+-- ELIMINAÇÃO DE TABELAS E SEQUENCES
+
+DROP SEQUENCE SQ_T_USUARIO;
+DROP SEQUENCE SQ_T_TIPO_SERVICO;
+DROP SEQUENCE SQ_T_SERVICO;
+
+
+DROP TABLE T_INVESTIMENTO;
+DROP TABLE T_DESPESA;
+DROP TABLE T_RECEBIMENTO;
+DROP TABLE T_TIPO_INVESTIMENTO;
+DROP TABLE T_TIPO_DESPESA;
+DROP TABLE T_TIPO_RECEBIMENTO;
+DROP TABLE T_SERVICO;
+DROP TABLE T_TRANSFERENCIA;
+DROP TABLE T_CONTA;
+DROP TABLE T_USUARIO;
+DROP TABLE T_TIPO_CONTA;
+
+/*
+DROP TABLE T_TIPO_SERVICO;
+DROP TABLE T_SERVICO;
+DROP TABLE T_USUARIO;*/
+
+COMMIT;
+
+
+-- CRIAÇÃO DAS TABELAS
+CREATE TABLE T_USUARIO (
+    cd_usuario INTEGER  NOT NULL,
+    nm_usuario VARCHAR2(30) NOT NULL,
+    sobrenome_usuario VARCHAR2(80) NOT NULL,
+    dt_nasc_usuario DATE NOT NULL,
+    email_usuario VARCHAR2(30) NOT NULL,
+    senha_usuario VARCHAR2(50) NOT NULL
+);
+
+ALTER TABLE T_USUARIO ADD CONSTRAINT PK_CD_USUARIO PRIMARY KEY (cd_usuario);
+
+CREATE SEQUENCE SQ_T_USUARIO MINVALUE 1 START WITH 1 INCREMENT BY 1;
+
+
+CREATE TABLE T_TIPO_SERVICO (
+    cd_tipo_servico INTEGER  NOT NULL,
+    tipo_servico VARCHAR2(30) NOT NULL
+);
+
+
+ALTER TABLE T_TIPO_SERVICO ADD CONSTRAINT PK_CD_TIPO_SERVICO PRIMARY KEY (cd_tipo_servico);
+
+CREATE SEQUENCE SQ_T_TIPO_SERVICO MINVALUE 1 START WITH 1 INCREMENT BY 1;
+
+INSERT INTO T_TIPO_SERVICO (cd_tipo_servico, tipo_servico) VALUES (SQ_T_TIPO_SERVICO.NEXTVAL, 'Recebimento');
+INSERT INTO T_TIPO_SERVICO (cd_tipo_servico, tipo_servico) VALUES (SQ_T_TIPO_SERVICO.NEXTVAL, 'Despesa');
+INSERT INTO T_TIPO_SERVICO (cd_tipo_servico, tipo_servico) VALUES (SQ_T_TIPO_SERVICO.NEXTVAL, 'Investimento');
+
+
+--select * from T_TIPO_SERVICO;
+
+
+CREATE TABLE T_SERVICO (
+    cd_servico INTEGER  NOT NULL,
+    cd_usuario INTEGER NOT NULL,
+    cd_tipo_servico INTEGER NOT NULL,
+    nm_servico VARCHAR2(30) NOT NULL,
+    vl_servico NUMBER(10,2) NOT NULL,
+    dt_servico DATE NOT NULL,
+    vl_saida_servico NUMBER(10,2) NULL,
+    dt_saida_servico DATE NULL,
+    dsc_servico VARCHAR2(120)
+);
+
+ALTER TABLE T_SERVICO ADD CONSTRAINT PK_CD_SERVICO PRIMARY KEY (cd_servico);
+
+ALTER TABLE T_SERVICO ADD CONSTRAINT FK_CD_USUARIO FOREIGN KEY (cd_usuario)
+REFERENCES T_USUARIO (cd_usuario);
+
+ALTER TABLE T_SERVICO ADD CONSTRAINT FK_CD_TIPO_SERVICO FOREIGN KEY (cd_tipo_servico)
+REFERENCES T_TIPO_SERVICO (cd_tipo_servico);
+
+CREATE SEQUENCE SQ_T_SERVICO MINVALUE 1 START WITH 1 INCREMENT BY 1;
+
+/*SELECT SUM(T_SERVICO.vl_servico) AS total_despesas
+FROM T_SERVICO WHERE T_SERVICO.cd_tipo_servico = 2;*/
+
+--select * from T_USUARIO;
+--SELECT * FROM T_SERVICO ORDER BY cd_servico DESC FETCH FIRST 1 ROWS ONLY;
+--COMMIT;
+/*
+SELECT 
+    T_SERVICO.cd_servico,
+    T_SERVICO.nm_servico,
+    T_TIPO_SERVICO.cd_tipo_servico,
+    T_TIPO_SERVICO.tipo_servico
+FROM 
+    T_SERVICO
+INNER JOIN 
+    T_TIPO_SERVICO ON T_SERVICO.cd_tipo_servico = T_TIPO_SERVICO.cd_tipo_servico;*/
+
+/*SELECT T_SERVICO.cd_servico, T_SERVICO.cd_usuario, T_TIPO_SERVICO.cd_tipo_servico,
+T_TIPO_SERVICO.tipo_servico, T_SERVICO.nm_servico, T_SERVICO.vl_servico, T_SERVICO.dt_servico,
+T_SERVICO.vl_saida_servico, T_SERVICO.dt_saida_servico, T_SERVICO.dsc_servico FROM T_SERVICO
+INNER JOIN T_TIPO_SERVICO ON T_SERVICO.cd_tipo_servico = T_TIPO_SERVICO.cd_tipo_servico AND
+T_SERVICO.cd_servico = 1;*/
+
+/*SELECT T_SERVICO.cd_servico, T_SERVICO.cd_conta, T_SERVICO.nm_servico, T_SERVICO.vl_servico,
+                    T_SERVICO.dt_servico, T_SERVICO.dsc_servico,
+                    T_RECEBIMENTO.cd_recebimento, T_TIPO_RECEBIMENTO.cd_tipo_recebimento,
+                    T_TIPO_RECEBIMENTO.tipo_recebimento
+                    FROM T_SERVICO INNER JOIN T_RECEBIMENTO
+                    ON T_SERVICO.cd_servico = T_RECEBIMENTO.cd_servico
+                    INNER JOIN T_TIPO_RECEBIMENTO ON T_RECEBIMENTO.cd_tipo_recebimento = T_TIPO_RECEBIMENTO.cd_tipo_recebimento
+                    AND T_SERVICO.cd_conta = 1 ORDER BY T_SERVICO.dt_servico DESC;*/
+
+
+COMMIT;
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+.aside {
+    border-right: 1px solid #dee2e6;
+}
+
+.aside-button {
+    border-bottom: 1px solid #dee2e6;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}

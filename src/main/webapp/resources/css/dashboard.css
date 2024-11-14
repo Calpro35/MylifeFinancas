@@ -1,0 +1,114 @@
+@import "main.css";
+
+body {
+
+
+    background-color: var(--table-cor);
+
+}
+
+.dashboard-container {
+    width: 80%;
+    display: flex;
+    min-height: 90vh;
+    background-color: var(--white);
+
+}
+
+.dashboard-content {
+    padding: 1rem;
+}
+
+.title_main {
+    outline: 2px solid var(--azul-app);
+}
+
+
+.back_fundo p{
+ display: contents;
+}
+
+.back_fundo {
+ border-bottom: 1px solid var(--cor-icon);
+}
+
+
+.color_saldo {
+    color: var(--azul-app);
+
+}
+
+.icon_dashboard {
+    font-weight: bold;
+}
+.text_center {
+    text-align:start;
+}
+
+.table_container {
+    width: 100%; /* Tamanho da div da tabela */
+    height: 300px; /* Altura fixa para a tabela */
+    overflow-y: scroll; /* Habilita a rolagem vertical */
+    -ms-overflow-style: none;  /* Desabilita a barra de rolagem no Internet Explorer */
+    scrollbar-width: none; /* Desabilita a barra de rolagem no Firefox */
+}
+
+/* Esconde a barra de rolagem */
+.table_container::-webkit-scrollbar {
+    display: none; /* Para o Chrome, Safari e Opera */
+}
+
+/* Estilo da tabela */
+.tab {
+    width: 100%; /* A tabela ocupa toda a largura disponível */
+}
+
+.thead-dark {
+
+    color: white;
+    position: sticky; /* Tornar o cabeçalho fixo */
+    top: 0; /* Fixa o cabeçalho no topo */
+    z-index: 1; /
+}
+
+.container_invest {
+    width: 100%;
+    height: 200px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Esconde a barra de rolagem */
+.table_invest::-webkit-scrollbar {
+    display: none;
+}
+
+.tab_recive_title{
+    background-color: var(--table-cor);
+}
+
+.padding{
+ padding: 13px;
+
+}
+.cor_valor{
+   color: var(--red-app);
+}
+
+
+input{
+    outline: 1px solid var(--azul-app);
+    width: 250px;
+}
+
+.btn_cadastro {
+    padding: 2rem;
+    outline: 1px solid var(--azul-app) ;
+    color: var(--white );
+    letter-spacing: 2px;
+}
+
+.padding_contas {
+    padding: revert;
+}

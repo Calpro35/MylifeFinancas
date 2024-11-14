@@ -1,0 +1,71 @@
+:root {
+
+    --azul-app: #0B123F; /* Cor primária */
+    --azul-secondary: #3654FD;
+    --backgound-main: #F9F9F9;
+    --yellow-app: #FCC838;
+    --white: #FFFFFF;
+    --gren-app:#429F20;
+    --table-cor:#FAF8F8;
+    --red-app:#FF0E0E;
+    --cor-icon:#A7AAC0;
+
+
+
+
+}
+
+
+body{
+    padding: 0;
+}
+
+
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+    text-align: center;
+}
+.display_contents {
+ display: contents;
+
+}
+
+.ico_aside{
+    font-size: 25px;
+    color: var(--cor-icon);
+}
+.align {
+    align-items: baseline;
+}
+
+.font_aside {
+    color: var(--azul-app);
+}
+
+.text_align {
+    text-align: center;
+
+}
+
+.usuario-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+.usuario-container input {
+    width: 100%;
+    padding-right: 40px; /* Espaço para o ícone */
+}
+.usuario-container i {
+    position: absolute;
+    right: 10px;
+    top: 70%;
+    transform: translateY(-60%);
+    cursor: pointer;
+    color: #6c757d;
+}
+
+
+
