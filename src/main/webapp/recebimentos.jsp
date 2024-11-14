@@ -99,7 +99,9 @@
             </table>
             <div class="d-flex gap-2 mt-5">
                 <p>Total: R$</p>
-                <span class="text-success">${totalRecebimentos}</span>
+                <span class="text-success"><fmt:formatNumber
+                        value="${totalRecebimentos}"/>
+                </span>
             </div>
         </div>
 

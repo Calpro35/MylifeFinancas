@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="resources/js/main.js">
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark color p-0  fixed-top "  >
+<nav class="navbar navbar-expand-lg navbar-dark color  fixed-top "  >
   <div class="container">
     <a class="navbar-brand" href="#">
       <img class="Header_logo" src="resources/img/logo_Header.png">

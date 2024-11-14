@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="resources/css/aside.css">
 
 
-<div class="aside col-3 bg-light pt-5 mt-2 ">
+<div class="aside col-3 bg-light pt-5 ">
 
     <div class="pt-2 mt-2  text-center">
     <h1 class="fs-5 font_aside">Menu</h1>
